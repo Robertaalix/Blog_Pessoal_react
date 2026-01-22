@@ -1,80 +1,40 @@
-import React from 'react';
+import ListaPostagens from '../../components/postagem/listaPostagens/ListaPostagens';
+import ModalPostagem from '../../components/postagem/modalPostagem/ModalPostagem';
 
 function Home() { 
+
     return (
         <>
-            <div
-                style={{
-                    background: "#312e81",
-                    display: "flex",
-                    justifyContent: "center",
-                }}
-            >
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr",
-                        color: "white",
-                        width: "100%",
-                        maxWidth: "1280px",
-                    }}
-                >
-                    <div
-                        style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                            alignItems: "center",
-                            justifyContent: "center",                            
-                            paddingTop: "1rem",
-                            paddingBottom: "1rem",
-                        }}
-                    >
-                        <h2 
-                            style={{
-                                fontSize: "3rem",
-                                fontWeight: "bold",
-                            }}
-                        >
+            <div className="bg-indigo-900 flex justify-center">
+                <div className="container grid grid-cols-2 text-white">
+                    <div className="flex flex-col gap-4 items-center justify-center py-4">
+                        <h2 className="text-5xl font-bold">
                             Seja Bem Vindo!
                         </h2>
-
-                        <p
-                            style={{
-                                fontSize: "1.5rem",
-                            }} 
-                        >
+                        <p className='text-x1'>
                             Expresse aqui seus pensamentos e opiniões!
                         </p>
+                        
+                        <div  className='flex justify-around gap-4'>
+                            
+                            <ModalPostagem />
 
-                        <div
-                            style={{
-                                borderRadius: "0.8rem",
-                                color: "White",
-                                border: "2px solid white",
-                                padding: "0.5rem 1rem",
-                            }}
-                        >
-                            Nova Postagem
                         </div>
+  
+                    </div>
+
+                    <div className='flex justify-center'>
+                        <img   
+                            src='https://i.imgur.com/fyfri1v.png'
+                            alt='Imagem Pagina Home'
+                            className='w-2/3'    
+                        />
                     </div>
                 </div>
-
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "center",
-                    }}
-                >
-                    <img   
-                        src='https://i.imgur.com/fyfri1v.png'
-                        alt='Imagem Página Home'
-                        style={{
-                            width: "66%"
-                        }}
-                    />
-                </div>
             </div>
+
+            <ListaPostagens />
+
         </>
     );
 }
